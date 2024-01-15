@@ -1,13 +1,11 @@
 # Command Line Program
 
-This is a command line program that recursively prints the files and directories in a given directory.
+## Description
+
+This command line program takes an absolute directory path as a command line argument and recursively prints the files and directories in the directory.
 
 ## Usage
 
-To use this program, run the following command:
-
 ```bash
-python main.py --path <directory_path>
+python main.py /path/to/directory
 ```
-
-Replace `<directory_path>` with the absolute path of the directory you want to explore.

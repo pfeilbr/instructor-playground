@@ -1,27 +1,18 @@
 import argparse
 import os
 
-from pydantic import BaseModel
 
-
-class Directory(BaseModel):
-    path: str
-
-
-def print_directory_contents(directory: Directory):
-    for root, dirs, files in os.walk(directory.path):
-        level = root.replace(directory.path, '').count(os.sep)
-        indent = ' ' * 4 * (level)
-        print('{}{}/'.format(indent, os.path.basename(root)))
-        subindent = ' ' * 4 * (level + 1)
-        for f in files:
-            print('{}{}'.format(subindent, f))
+def print_directory_contents(path):
+    for child in os.listdir(path):
+        child_path = os.path.join(path, child)
+        if os.path.isdir(child_path):
+            print_directory_contents(child_path)
+        else:
+            print(child_path)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Recursively print the files and directories in a given directory.')
-    parser.add_argument('--path', type=str, help='The absolute path of the directory to explore')
+    parser = argparse.ArgumentParser(description='Print files and directories in a directory')
+    parser.add_argument('directory', type=str, help='Absolute directory path')
     args = parser.parse_args()
-
-    directory = Directory(path=args.path)
-    print_directory_contents(directory)
+    print_directory_contents(args.directory)
