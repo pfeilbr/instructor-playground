@@ -19,8 +19,6 @@ pip freeze > requirements.txt
 # OR open main.ipynb in vscode
 # OR open main.ipynb in `juypter lab`
 juypter lab
-
-
 ```
 
 ## resources
