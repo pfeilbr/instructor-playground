@@ -1,6 +1,6 @@
 # URL Downloader
 
-This command line program allows you to download the contents of a specified URL and save it to a file.
+This command line program downloads the contents of a specified URL and saves it to a given output filename.
 
 ## Installation
 
@@ -11,7 +11,7 @@ python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
 
-Next, install the required dependencies:
+Then, install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -25,10 +25,4 @@ To use the program, run the following command:
 python main.py --url <URL> --output <FILENAME>
 ```
 
-Replace `<URL>` with the URL you want to download and `<FILENAME>` with the desired output filename.
-
-For example:
-
-```bash
-python main.py --url http://example.com --output example.html
-```
+Replace `<URL>` with the URL you want to download from, and `<FILENAME>` with the desired output filename.
