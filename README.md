@@ -9,8 +9,18 @@ see [`main.ipynb`](./main.ipynb)
 ## demo
 
 ```bash
-pipenv install
-pipenv shell
+pyenv global 3.12
+virtualenv --python="/home/pfeilbr/.pyenv/shims/python" ".venv"
+source ./.venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+pip freeze > requirements.txt
+
+# OR open main.ipynb in vscode
+# OR open main.ipynb in `juypter lab`
+juypter lab
+
+
 ```
 
 ## resources
