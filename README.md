@@ -9,16 +9,31 @@ see [`main.ipynb`](./main.ipynb)
 ## demo
 
 ```bash
-pyenv global 3.12
-virtualenv --python="/home/pfeilbr/.pyenv/shims/python" ".venv"
+# set local version of python for *this* shell
+pyenv local 3.12
+
+# create virtual environment with local version of python
+python -m venv .venv
+
+# activate environment
 source ./.venv/bin/activate
+
+# upgrade pip
 pip install --upgrade pip
+
+# install requirements
 pip install -r requirements.txt
+
+# freeze requirements
 pip freeze > requirements.txt
 
-# OR open main.ipynb in vscode
+# open main.ipynb in vscode
+code main.ipynb
+
 # OR open main.ipynb in `juypter lab`
 juypter lab
+
+# open http://localhost:8888/lab in browser
 ```
 
 ## resources
